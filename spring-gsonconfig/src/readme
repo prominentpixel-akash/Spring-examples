@@ -1,0 +1,59 @@
+Possible configuration values
+=============================
+gson, jackson, jsonb
+
+Ex. spring.http.converters.preferred-json-mapper=gson
+
+Serialization == Write JSON using Gson (Java object to its JSON)
+=================================================================
+Employee emp = new Employee(1001, "Lokesh", "Gupta", "howtodoinjava@gmail.com");
+Gson gson = new Gson();
+String jsonString = gson.toJson(emp);
+System.out.println(jsonString);
+
+Output
+Console
+{
+   "id":1001,
+   "firstName":"Lokesh",
+   "lastName":"Gupta",
+   "email":"howtodoinjava@gmail.com"
+}
+
+Deserialization – Read JSON using Gson(Converting a JSON string to equivalent Java object)
+==========================================================================================
+String jsonString = "{'id':1001, 'firstName':'Lokesh', 'lastName':'Gupta', 'email':'howtodoinjava@gmail.com'}";
+Gson gson = new Gson();
+Employee empObject = gson.fromJson(jsonString, Employee.class);
+System.out.println(empObject);
+
+Output
+Console
+Employee [id=1001, firstName=Lokesh, lastName=Gupta, email=howtodoinjava@gmail.com]
+
+Gson – Pretty Print JSON
+========================
+There will not be any whitespace in between field names and its value.
+
+1. GsonBuilder.setPrettyPrinting()
+Gson gson = new GsonBuilder()
+                .setPrettyPrinting()
+                .create();
+
+String jsonOutput = gson.toJson(someObject);
+
+Output
+Console
+Pretty printed JSON
+{
+  "id": 1,
+  "firstName": "Lokesh",
+  "lastName": "Gupta",
+  "emailId": "howtogoinjava@gmail.com"
+}
+
+How to allow null values during serialization
+=============================================
+Gson gson = new GsonBuilder()
+        .serializeNulls()
+        .create();
