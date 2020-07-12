@@ -1,0 +1,1 @@
+INSERT INTO tempary VALUES (1, 'AA');
