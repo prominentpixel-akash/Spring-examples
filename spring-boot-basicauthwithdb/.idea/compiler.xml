@@ -7,12 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="spring-boot-basicauthwithdb" />
-        <module name="SpringBootSpringSecurityBasicAuthWithDB" />
+        <module name="spring-boot-basicauthwithdb" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="spring-boot-basicauthwithdb" target="1.8" />
-      <module name="SpringBootSpringSecurityBasicAuthWithDB" target="1.8" />
+      <module name="spring-boot-basicauthwithdb" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
